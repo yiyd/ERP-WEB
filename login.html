@@ -1,24 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Basic PasswordBox - jQuery EasyUI Demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>XX系统</title>
     <link rel="stylesheet" type="text/css" href="js/themes/default/easyui.css">
     <link rel="stylesheet" type="text/css" href="js/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="js/demo/demo.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="js/locale/easyui-lang-zh_CN.js"></script>
 </head>
-<body>
-    <h2>Basic PasswordBox</h2>
-    <p>The passwordbox allows a user to enter passwords.</p>
-    <div style="margin:20px 0;"></div>
-    <div class="easyui-panel" style="width:400px;padding:50px 60px;margin: 0 atuo">
-        <div style="margin-bottom:20px">
-            <input class="easyui-textbox" prompt="Username" iconWidth="28" style="width:100%;height:34px;padding:10px;">
-        </div>
-        <div style="margin-bottom:20px">
-            <input class="easyui-passwordbox" prompt="Password" iconWidth="28" style="width:100%;height:34px;padding:10px">
+<body class="login5">
+    <div class="login5_top"><h1><br />XX系统</h1></div>
+    <div class="login5_bg"><img src="resources/bg.jpg"></div>
+    <div class="login5_cnt clearfix">
+        <div class="login5_cntr">
+            <h2>用户登录</h2>
+            <form id="form1" name="form1" action="" method="post">
+                <div id="emptyValidator" style="display:block;left: 30px;position: absolute;text-align: center;top: 70px;color: red "></div>
+                <div class="login5_cn">
+                    <input type="hidden" name="casPath" value="/ucas" id="casPath">
+                    <input type="hidden" id="lt" name="lt" value="LT-151974-j2BaKLcgS7Eucc5ciYRSe5pCZYzGfm-ultra">
+                    <input type="hidden" name="execution" value="e1s1">
+                    <input type="hidden" name="_eventId" value="submit">
+                    <input type="hidden" name="codeToken" id="codeToken">
+                    <ul>
+                        <li class="bb"><label id="myUserName" class="placeholder">&nbsp;帐号&nbsp;</label>
+                            <input id="username" name="username" autocomplete="off" onblur="rememberName()" title="帐号">
+                        </li>
+                        <li><label id="myPwd" class="placeholder">&nbsp;密码&nbsp;</label>   
+                            <input name="password" type="password" autocomplete="off" id="password" title="密码" value="">
+                        </li>
+                    </ul> 
+                    <div class="p5_yzm clearfix">
+                    </div>
+                    
+                    <div class="p5_jzmm">
+                        <span class="fl"><input id="rememberPass" name="rememberPass" value="" type="checkbox"> 记住密码</span>
+                        <a class="fr" href="null">找回密码</a>
+                    </div>
+                    <div class="p5_loginbtn">
+                        <a href="javascript:void(0)" onclick="check()">登录</a>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
+    <div class="login5_bot">版权所有©  中国XX有限公司</div>
+    <div id="cli_dialog_div"></div>
+    
+    <style scoped>
+        .f1{
+            width:200px;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function(){
+            $('#ff').form({
+                success:function(data){
+                    $.messager.alert('Info', data, 'info');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
