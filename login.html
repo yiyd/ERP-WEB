@@ -8,11 +8,11 @@
 </head>
 <body class="login5">
     <div class="login5_top"><h1><br />严氏帽业集团ERP系统</h1></div>
-    <div class="login5_bg"><img src="resources/bg.jpg"></div>
+    <div class="login5_bg"><img src="assets/img/bg.jpg"></div>
     <div class="login5_cnt clearfix">
         <div class="login5_cntr">
             <h2>用户登录</h2>
-            <form id="ff" name="form1" action="http://139.224.13.86/login.php" method="post">
+            <form id="ff" name="loginForm" action="http://139.224.13.86/login.php" method="get" enctype="application/x-www-form-urlencoded"> 
                 <div id="emptyValidator" style="display:block;left: 30px;position: absolute;text-align: center;top: 70px;color: red "></div>
                 <div class="login5_cn">
                     <input type="hidden" name="casPath" value="/ucas" id="casPath">
@@ -22,10 +22,10 @@
                     <input type="hidden" name="codeToken" id="codeToken">
                     <ul>
                         <li class="bb"><label id="myUserName" class="placeholder">&nbsp;帐号&nbsp;</label>
-                            <input id="username" name="username" autocomplete="off" onblur="rememberName()" title="帐号">
+                            <input id="username" name="username" type="text" autocomplete="off" onblur="rememberName()" title="帐号">
                         </li>
                         <li><label id="myPwd" class="placeholder">&nbsp;密码&nbsp;</label>   
-                            <input name="password" type="password" autocomplete="off" id="password" title="密码" value="">
+                            <input id="password" name="password" type="text" autocomplete="off" title="密码" value="">
                         </li>
                     </ul> 
                     <div class="p5_yzm clearfix">
@@ -51,19 +51,27 @@
         }
     </style>
     <script type="text/javascript">
-        $(function(){
-            $('#ff').form({
-                success:function(data){
-                    $.messager.alert('Info', data, 'info');
-                    
-                    // 账户密码验证成功后跳转main.html
+        function check() {
+            console.log("验证用户名密码");
+            //$('#ff').submit();
 
+            $.ajax({
+                url:"https://139.224.13.86/login.php",
+                type:"GET",
+                dataType:'JSONP',
+                data:{
+                    username:$("#username").val(),
+                    password:$("#username").val()
+                },
+                success:function (data) {
+                    var result = eval(data);
+                    console.log(result[0].result);
+
+                    // if (result[0] == 'success') {
+                    //     window.location.href = "main.html";
+                    // }
                 }
             });
-        });
-
-        function check() {
-            $('#ff').submit();
         }
     </script>
 </body>
