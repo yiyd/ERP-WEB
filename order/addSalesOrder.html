@@ -181,16 +181,16 @@
   });
 
   $('#save').click(function (event) {
-    // top.topManager.closePage();
+    top.topManager.closePage();
     console.log("Save");
-    // //关闭其他页面时，如果页面未打开，不进行任何操作
-    // top.topManager.closePage('managemnet-success');
+    //关闭其他页面时，如果页面未打开，不进行任何操作
+    top.topManager.closePage('managemnet-success');
  
-    // //打开其他页面并关闭本页，常用于成功、失败页面的跳转
-    // top.topManager.openPage({
-    //   id : 'managemnet-success',
-    //   isClose : true
-    // });
+    //打开其他页面并关闭本页，常用于成功、失败页面的跳转
+    top.topManager.openPage({
+      id : 'managemnet-success',
+      isClose : true
+    });
   });
 </script>
 
