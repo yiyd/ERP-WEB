@@ -40,8 +40,8 @@
   <script>
     BUI.use('common/main',function(){
       var config = [{
-          id:'menu', 
-          homePage : 'addProduct',
+          id:'product', 
+          //homePage : 'addProduct',
           menu:[{
               text:'样品操作',
               items:[
@@ -50,7 +50,7 @@
               ]
             }]
           },{
-            id:'form',
+            id:'order',
             menu:[{
                 text:'生产订单',
                 items:[
@@ -60,8 +60,8 @@
               },{
                 text:'销售订单',
                 items:[
-                  {id:'success',text:'新增订单',href:'form/success.html'},
-                  {id:'fail',text:'查询订单',href:'form/fail.html'}
+                  {id:'addSalesOrder',text:'新增销售订单',href:'order/addSalesOrder.html'},
+                  {id:'searchSalesOrder',text:'查询销售订单',href:'form/fail.html'}
                 
                 ]
               },{
@@ -74,7 +74,7 @@
                 ]
               }]
           },{
-            id:'search',
+            id:'quote',
             menu:[{
                 text:'搜索页面',
                 items:[
@@ -86,7 +86,7 @@
                 ]
               }]
           },{
-            id:'detail',
+            id:'report',
             menu:[{
                 text:'生产报表',
                 items:[
@@ -99,7 +99,7 @@
                 ]
               }]
           },{
-            id : 'chart',
+            id : 'management',
             menu : [{
               text : '权限管理',
               items:[
