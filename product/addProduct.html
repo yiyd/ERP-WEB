@@ -1,16 +1,18 @@
 <!DOCTYPE HTML>
 <html>
- <head>
+
+<head>
   <title>新增样品</title>
-   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-       <link href="../assets/css/dpl-min.css" rel="stylesheet" type="text/css" />
-    <link href="../assets/css/bui-min.css" rel="stylesheet" type="text/css" />
-    <link href="../assets/css/page-min.css" rel="stylesheet" type="text/css" />  
- </head>
- <body>
-  
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link href="../assets/css/dpl-min.css" rel="stylesheet" type="text/css" />
+  <link href="../assets/css/bui-min.css" rel="stylesheet" type="text/css" />
+  <link href="../assets/css/page-min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
   <div class="container">
-    <form id ="J_Form" class="form-horizontal">
+    <form id="J_Form" class="form-horizontal">
       <!--    -->
       <h3>基本信息</h3>
       <div class="row">
@@ -21,17 +23,28 @@
           </div>
         </div>
         <div class="control-group span12">
-          <label class="control-label"><s>*</s>样品编号：</label>
+          <label class="control-label"><s>*</s>样品年份：</label>
           <div class="controls">
-            <input name="sid" type="text" class="control-text" data-rules="{required:true}">
+            <select name="years" data-rules="{required:true}">
+              <option value="">请选择</option>
+              <option value="0">2015</option>
+              <option value="1">2016</option>
+              <option value="2">2017</option>
+              <option value="3">2018</option>
+              <option value="4">2019</option>
+              <option value="5">2020</option>
+              <option value="6">2021</option>
+              <option value="7">2022</option>
+            </select>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="control-group span12">
-          <label class="control-label">样品年份：</label>
+          <label class="control-label"><s>*</s>业务员：</label>
           <div class="controls">
-            <select name="sex">
+            <select name="salesman" data-rules="{required:true}">
+              <option value="">请选择</option>
               <option value="0">2015</option>
               <option value="1">2016</option>
               <option value="2">2017</option>
@@ -46,35 +59,27 @@
         <div class="control-group12 span12">
           <label class="control-label"><s>*</s>样品图片：</label>
           <div class="controls">
-            <input name="birthday" type="text" class="calendar" data-rules="{required:true}">
+            <input name="image" type="file" class="file" data-rules="{required:true}">
           </div>
         </div>
       </div>
       <div class="row">
         <div class="control-group span12">
-          <label class="control-label"><s>*</s>样品描述：</label>
+          <label class="control-label">样品描述：</label>
           <div class="controls">
-            <input name="address" type="text" class="span8 span-width control-text"  data-rules="{required:true}">
+            <textarea name="proDesc" id="proDesc" class="span8 span-width"></textarea>
           </div>
         </div>
       </div>
       <hr/>
       <h3>工序信息</h3>
       <div class="row">
-        <div class="control-group span12">
-          <label class="control-label"><s>*</s>一级工序：</label>
-          <div class="controls">
-            <input name="" type="text" class=" control-text  span8 span-width" data-rules="{required:true}">
-          </div>
-        </div>
-        <div class="control-group span12">
-          <label class="control-label"><s>*</s>二级工序：</label>
-          <div class="controls bui-form-group" data-rules="{dateRange:true}" >
-            <input name="start" type="text" class="calendar" data-rules="{required:true}"><span> - </span><input name="end" type="text" class="calendar" data-rules="{required:true}">
-          </div>
+        <div class="span21 offset3 control-row-auto">
+          <div id="processGrid"></div>
+          <input type="hidden" name="process">
         </div>
       </div>
-      
+
       <hr/>
 
       <h3>备注</h3>
@@ -86,7 +91,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="row">
         <div class="form-actions offset3">
           <button type="submit" class="button button-primary">保存</button>
@@ -94,93 +99,126 @@
         </div>
       </div>
     </form>
+    <div id="content" class="hide">
+      <form id="ProcessForm" class="form-vertical">
+        <div class="row">
+          <div class="control-group span8">
+            <label class="control-label"><s>*</s>一级工序：</label>
+            <div class="controls">
+              <select data-rules="{required:true}" name="p1" class="input-normal"> 
+                <option value="">请选择</option>
+                <option value="草帽">草帽</option>
+                <option value="鸭舌帽">鸭舌帽</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="control-group span8">
+            <label class="control-label"><s>*</s>二级工序：</label>
+            <div class="controls">
+              <select data-rules="{required:true}" name="p2" class="input-normal"> 
+                <option value="">请选择</option>
+                <option value="草帽">草帽</option>
+                <option value="鸭舌帽">鸭舌帽</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="control-group span8">
+            <label class="control-label"><s>*</s>档次：</label>
+            <div class="controls">
+              <select data-rules="{required:true}" name="p3" class="input-normal"> 
+                <option value="">请选择</option>
+                <option value="草帽">草帽</option>
+                <option value="鸭舌帽">鸭舌帽</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
   <script type="text/javascript" src="../assets/js/jquery-1.8.1.min.js"></script>
   <script type="text/javascript" src="../assets/js/bui-min.js"></script>
-
   <script type="text/javascript" src="../assets/js/config-min.js"></script>
   <script type="text/javascript">
     BUI.use('common/page');
   </script>
-  <!-- 仅仅为了显示代码使用，不要在项目中引入使用-->
-  <script type="text/javascript" src="../assets/js/prettify.js"></script>
   <script type="text/javascript">
-    $(function () {
-      prettyPrint();
-    });
-  </script> 
-<script type="text/javascript">
-  BUI.use(['bui/grid','bui/data','bui/form'],function (Grid,Data,Form) {
-
-    var columns = [{title : '学校名称',dataIndex :'school',editor : {xtype : 'text',rules:{required:true}}},
-            {title : '入学日期',dataIndex :'enter',editor : {xtype : 'date',rules:{required:true}},renderer : Grid.Format.dateRenderer},//使用现有的渲染函数，日期格式化
-            {title : '毕业日期',dataIndex :'outter',editor : {xtype : 'date',rules:{required:true},validator : function(value,obj){
-              if(obj.enter && value && obj.enter > value){
-                return '毕业日期不能晚于入学日期！'
-              }
-            }},renderer : Grid.Format.dateRenderer},
-            {title : '备注',dataIndex :'memo',width:200,editor : {xtype : 'text'}}
-            
-          ],
+    BUI.use(['bui/grid', 'bui/data', 'bui/form'], function (Grid, Data, Form) {
+      var columns = [
+        { title: '一级工序', dataIndex: 'p1' },
+        { title: '二级工序', dataIndex: 'p2' },
+        { title: '档次', dataIndex: 'p3' },
+        {
+          title: '操作', renderer: function () {
+            return '<span class="grid-command btn-edit">编辑</span>';
+          }
+        }
+      ],
       //默认的数据
-      data = [{id:'1',school:'武汉第一初级中学',enter:936144000000,outter:993945600000,memo:'表现优异，多次评为三好学生'},
-        {id:'2',school:'武汉第一高级中学',enter:999561600000,outter:1057017600000,memo:'表现优异，多次评为三好学生'}],
+      data = [],
       store = new Data.Store({
-        data:data
+        data: data
       }),
-      editing = new Grid.Plugins.CellEditing(),
+      editing = new Grid.Plugins.DialogEditing({
+        contentId:'content',
+        triggerCls:'btn-edit',
+        eidtor: {
+          focusable:false
+        }
+      }),
       grid = new Grid.Grid({
-        render : '#grid',
-        columns : columns,
-        width : 700,
-        forceFit : true,
-        store : store,
-        plugins : [Grid.Plugins.CheckSelection,editing],
-        tbar:{
-            items : [{
-              btnCls : 'button button-small',
-              text : '<i class="icon-plus"></i>添加',
-              listeners : {
-                'click' : addFunction
-              }
-            },
-            {
-              btnCls : 'button button-small',
-              text : '<i class="icon-remove"></i>删除',
-              listeners : {
-                'click' : delFunction
-              }
-            }]
+        render: '#processGrid',
+        columns: columns,
+        width: 700,
+        forceFit: true,
+        store: store,
+        plugins: [Grid.Plugins.CheckSelection, editing],
+        tbar: {
+          items: [{
+            btnCls: 'button button-small',
+            text: '<i class="icon-plus"></i>添加',
+            listeners: {
+              'click': addFunction
+            }
+          },
+          {
+            btnCls: 'button button-small',
+            text: '<i class="icon-remove"></i>删除',
+            listeners: {
+              'click': delFunction
+            }
+          }]
         }
 
       });
-    grid.render();
+      grid.render();
 
-    function addFunction(){
-      var newData = {school :'请输入学校名称'};
-      store.add(newData);
-      editing.edit(newData,'school'); //添加记录后，直接编辑
-    }
-
-    function delFunction(){
-      var selections = grid.getSelection();
-      store.remove(selections);
-    }
-
-    var form = new Form.HForm({
-      srcNode : '#J_Form'
-    });
-    form.render();
-
-    form.on('beforesubmit',function(){
-      if(!editing.isValid()){
-        return false;
+      function addFunction() {
+        var newData = {};
+        store.add(newData);
+        editing.edit(newData); //添加记录后，直接编辑
       }
+
+      function delFunction() {
+        var selections = grid.getSelection();
+        store.remove(selections);
+      }
+
+      var form = new Form.HForm({
+        srcNode: '#J_Form'
+      });
+      form.render();
+
+      form.on('beforesubmit', function () {
+        if (!editing.isValid()) {
+          return false;
+        }
+      });
     });
-
-
-  });
-</script>
-
-<body>
-</html> 
+  </script>
+  <body>
+</html>

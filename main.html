@@ -3,6 +3,7 @@
  <head>
   <title> 严氏帽业集团ERP系统</title>
    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <link rel="stylesheet" type="text/css" href="assets/css/login.css">
    <link href="assets/css/dpl-min.css" rel="stylesheet" type="text/css" />
   <link href="assets/css/bui-min.css" rel="stylesheet" type="text/css" />
    <link href="assets/css/main-min.css" rel="stylesheet" type="text/css" />
@@ -33,6 +34,7 @@
 
     </ul>
    </div>
+   <!--<div class="login5_bot1">版权所有©  中国严氏帽业集团</div>-->
   <script type="text/javascript" src="assets/js/jquery-1.8.1.min.js"></script>
   <script type="text/javascript" src="./assets/js/bui.js"></script>
   <script type="text/javascript" src="./assets/js/config.js"></script>
@@ -46,7 +48,7 @@
               text:'样品操作',
               items:[
                 {id:'addProduct',text:'新增样品',href:'product/addProduct.html'},
-                {id:'searchProduct',text:'查询样品',href:'main/menu.html'}
+                {id:'searchProduct',text:'查询样品',href:'product/searchProduct.html'}
               ]
             }]
           },{
@@ -54,29 +56,20 @@
             menu:[{
                 text:'生产订单',
                 items:[
-                  {id:'code',text:'新增订单',href:'form/code.html'},
-                  {id:'example',text:'查询订单',href:'form/example.html'}
+                  {id:'searchProduceOrder',text:'查询生产订单',href:'order/searchProduceOrder.html'}
                 ]
               },{
                 text:'销售订单',
                 items:[
                   {id:'addSalesOrder',text:'新增销售订单',href:'order/addSalesOrder.html'},
-                  {id:'searchSalesOrder',text:'查询销售订单',href:'form/fail.html'}
+                  {id:'searchSalesOrder',text:'查询销售订单',href:'order/searchSalesOrder.html'}
                 
-                ]
-              },{
-                text:'可编辑表格',
-                items:[
-                  {id:'grid',text:'可编辑表格',href:'form/grid.html'},
-                  {id:'form-grid',text:'表单中的可编辑表格',href:'form/form-grid.html'},
-                  {id:'dialog-grid',text:'使用弹出框',href:'form/dialog-grid.html'},
-                  {id:'form-dialog-grid',text:'表单中使用弹出框',href:'form/form-dialog-grid.html'}
                 ]
               }]
           },{
             id:'quote',
             menu:[{
-                text:'搜索页面',
+                text:'报价管理',
                 items:[
                   {id:'code',text:'搜索页面代码',href:'search/code.html'},
                   {id:'example',text:'搜索页面示例',href:'search/example.html'},
