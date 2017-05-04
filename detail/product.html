@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title> 样品详情页</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="http://g.alicdn.com/bui/bui/1.1.21/css/bs3/dpl.css" rel="stylesheet">
+  		<link href="http://g.alicdn.com/bui/bui/1.1.21/css/bs3/bui.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<div class="detail-page">
+				<div class="detail-section">
+					<h3>基本信息</h3>
+					<div class="row detail-row">
+						<div class="span8">
+							<label>样品编号：</label><span class="detail-text">20171109234234</span>
+						</div>
+						<div class="span8">
+							<label>样品名称：</label><span class="detail-text">草帽</span>
+						</div>
+						<div class="span8">
+							<label>样品年份：</label><span class="detail-text">1993</span>
+						</div>
+					</div>
+					<div class="row detail-row">
+						<div class="span8">
+							<label>业务员：</label><span class="detail-text">张三</span>
+						</div>
+						<div class="span8">
+							<label>样品描述：</label><span class="detail-text">和那里是jfk啦圣诞节分厘卡似的</span>
+						</div>
+					</div>
+				</div>
+				<div class="detail-section">
+					<h3>费用信息</h3>
+					<div class="row detail-row">
+						<div class="span8">
+							<label>综合管理费：</label><span class="detail-text"><s>￥</s>222</span>
+						</div>
+						<div class="span8">
+							<label>综合业务费：</label><span class="detail-text"><s>￥</s>222</span>
+						</div>
+					</div>
+				</div>
+				<div class="detail-section">
+					<h3>工序信息</h3>
+					<div class="row detail-row">
+						<div class="span24">
+							<div id="grid"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../assets/js/jquery-1.8.1.min.js"></script>
+		<script type="text/javascript" src="../assets/js/bui-min.js"></script>
+
+		<script type="text/javascript" src="../assets/js/config-min.js"></script>
+		<script type="text/javascript">
+			BUI.use('common/page');
+		</script>
+		<!-- 仅仅为了显示代码使用，不要在项目中引入使用-->
+		<script type="text/javascript" src="../assets/js/prettify.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				prettyPrint();
+			});
+		</script>
+		<script type="text/javascript">
+			BUI.use('bui/grid', function(Grid) {
+				var data = [{
+						id: '1112',
+						name: '李四',
+						day: 1349622209547,
+						address: '上海市浦东新区杨高北路938号'
+					}, {
+						id: '1112',
+						name: '李四',
+						day: 1349622209547,
+						address: '上海市浦东新区杨高北路938号'
+					}, {
+						id: '1112',
+						name: '李四',
+						day: 1349622209547,
+						address: '上海市浦东新区杨高北路938号'
+					}, {
+						id: '1112',
+						name: '李四',
+						day: 1349622209547,
+						address: '上海市浦东新区杨高北路938号'
+					}],
+
+					grid = new Grid.SimpleGrid({
+						render: '#grid', //显示Grid到此处
+						width: 950, //设置宽度
+						columns: [{
+								title: '学生编号',
+								dataIndex: 'id',
+								width: 80
+							},
+							{
+								title: '学生姓名',
+								dataIndex: 'name',
+								width: 100
+							},
+							{
+								title: '入学时间',
+								dataIndex: 'day',
+								width: 100,
+								renderer: Grid.Format.dateRenderer
+							},
+							{
+								title: '学生家庭住址',
+								dataIndex: 'address',
+								width: 300
+							}
+						]
+					});
+				grid.render();
+				grid.showData(data);
+			});
+		</script>
+
+		<body>
+
+</html>

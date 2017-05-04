@@ -1,118 +1,204 @@
 <!DOCTYPE HTML>
 <html>
- <head>
-  <title> 严氏帽业集团ERP系统</title>
-   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-   <link rel="stylesheet" type="text/css" href="assets/css/login.css">
-   <link href="assets/css/dpl-min.css" rel="stylesheet" type="text/css" />
-  <link href="assets/css/bui-min.css" rel="stylesheet" type="text/css" />
-   <link href="assets/css/main-min.css" rel="stylesheet" type="text/css" />
- </head>
- <body>
+	<head>
+		<title> 严氏帽业集团ERP系统</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="assets/css/login.css">
+		<link href="assets/css/dpl-min.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/bui-min.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/main-min.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+		<div class="header">
+			<div class="dl-title">
+				<span class="dl-title-text">严氏帽业集团</span><span class="lp-title-port">ERP</span><span class="dl-title-text">系统</span>
+			</div>
+			<div class="dl-log">欢迎您，<span class="dl-log-user">**.**@alibaba-inc.com</span>
+				<a href="login.html" title="退出系统" class="dl-log-quit">[退出]</a>
+			</div>
+		</div>
+		<div class="content">
+			<div class="dl-main-nav">
+				<div class="dl-inform">
+					<div class="dl-inform-title"><s class="dl-inform-icon dl-up"></s></div>
+				</div>
+				<ul id="J_Nav" class="nav-list ks-clear">
+					<li class="nav-item dl-selected">
+						<div class="nav-item-inner nav-sample">样品管理</div>
+					</li>
+					<li class="nav-item">
+						<div class="nav-item-inner nav-order">订单管理</div>
+					</li>
+					<li class="nav-item">
+						<div class="nav-item-inner nav-cost">报价管理</div>
+					</li>
+					<li class="nav-item">
+						<div class="nav-item-inner nav-marketing">企业报表</div>
+					</li>
+					<li class="nav-item">
+						<div class="nav-item-inner nav-permission">配置管理</div>
+					</li>
+				</ul>
+			</div>
+			<ul id="J_NavContent" class="dl-tab-conten">
 
-  <div class="header">
-    
-      <div class="dl-title">
-        <span class="dl-title-text">严氏帽业集团</span><span class="lp-title-port">ERP</span><span class="dl-title-text">系统</span>
-      </div>
+			</ul>
+		</div>
+		<!--<div class="login5_bot1">版权所有©  中国严氏帽业集团</div>-->
+		<script type="text/javascript" src="assets/js/jquery-1.8.1.min.js"></script>
+		<script type="text/javascript" src="./assets/js/bui.js"></script>
+		<script type="text/javascript" src="./assets/js/config.js"></script>
 
-    <div class="dl-log">欢迎您，<span class="dl-log-user">**.**@alibaba-inc.com</span><a href="login.html" title="退出系统" class="dl-log-quit">[退出]</a>
-    </div>
-  </div>
-   <div class="content">
-    <div class="dl-main-nav">
-      <div class="dl-inform"><div class="dl-inform-title"><s class="dl-inform-icon dl-up"></s></div></div>
-      <ul id="J_Nav"  class="nav-list ks-clear">
-        <li class="nav-item dl-selected"><div class="nav-item-inner nav-sample">样品管理</div></li>
-        <li class="nav-item"><div class="nav-item-inner nav-order">订单管理</div></li>
-        <li class="nav-item"><div class="nav-item-inner nav-cost">报价管理</div></li>
-        <li class="nav-item"><div class="nav-item-inner nav-marketing">企业报表</div></li>
-        <li class="nav-item"><div class="nav-item-inner nav-permission">配置管理</div></li>
-      </ul>
-    </div>
-    <ul id="J_NavContent" class="dl-tab-conten">
+		<script>
+			BUI.use('common/main', function() {
+				var config = [{
+					id: 'product',
+					//homePage : 'addProduct',
+					menu: [{
+						text: '样品操作',
+						items: [{
+								id: 'addProduct',
+								text: '新增样品',
+								href: 'product/addProduct.html'
+							},
+							{
+								id: 'searchProduct',
+								text: '查询样品',
+								href: 'product/searchProduct.html'
+							}
+						]
+					}]
+				}, {
+					id: 'order',
+					menu: [{
+						text: '生产订单',
+						items: [{
+							id: 'searchProduceOrder',
+							text: '查询生产订单',
+							href: 'order/searchProduceOrder.html'
+						}]
+					}, {
+						text: '销售订单',
+						items: [{
+								id: 'addSalesOrder',
+								text: '新增销售订单',
+								href: 'order/addSalesOrder.html'
+							},
+							{
+								id: 'searchSalesOrder',
+								text: '查询销售订单',
+								href: 'order/searchSalesOrder.html'
+							}
 
-    </ul>
-   </div>
-   <!--<div class="login5_bot1">版权所有©  中国严氏帽业集团</div>-->
-  <script type="text/javascript" src="assets/js/jquery-1.8.1.min.js"></script>
-  <script type="text/javascript" src="./assets/js/bui.js"></script>
-  <script type="text/javascript" src="./assets/js/config.js"></script>
+						]
+					}]
+				}, {
+					id: 'quote',
+					menu: [{
+						text: '报价管理',
+						items: [{
+								id: 'code',
+								text: '搜索页面代码',
+								href: 'search/code.html'
+							},
+							{
+								id: 'example',
+								text: '搜索页面示例',
+								href: 'search/example.html'
+							},
+							{
+								id: 'example-dialog',
+								text: '搜索页面编辑示例',
+								href: 'search/example-dialog.html'
+							},
+							{
+								id: 'introduce',
+								text: '搜索页面简介',
+								href: 'search/introduce.html'
+							},
+							{
+								id: 'config',
+								text: '搜索配置',
+								href: 'search/config.html'
+							}
+						]
+					}]
+				}, {
+					id: 'report',
+					menu: [{
+						text: '生产报表',
+						items: [{
+								id: 'code',
+								text: '引入代码',
+								href: 'chart/code.html'
+							},
+							{
+								id: 'line',
+								text: '折线图',
+								href: 'chart/line.html'
+							},
+							{
+								id: 'area',
+								text: '区域图',
+								href: 'chart/area.html'
+							},
+							{
+								id: 'column',
+								text: '柱状图',
+								href: 'chart/column.html'
+							},
+							{
+								id: 'pie',
+								text: '饼图',
+								href: 'chart/pie.html'
+							},
+							{
+								id: 'radar',
+								text: '雷达图',
+								href: 'chart/radar.html'
+							}
+						]
+					}]
+				}, {
+					id: 'management',
+					menu: [{
+						text: '权限管理',
+						items: [{
+								id: 'code',
+								text: '详情页面代码',
+								href: 'detail/code.html'
+							},
+							{
+								id: 'example',
+								text: '详情页面示例',
+								href: 'detail/example.html'
+							},
+							{
+								id: 'introduce',
+								text: '详情页面简介',
+								href: 'detail/introduce.html'
+							}
+						]
+					}, {
+						text: '工序管理',
+						items: [{
+								id: 'success',
+								text: '新增订单',
+								href: 'form/success.html'
+							},
+							{
+								id: 'fail',
+								text: '查询订单',
+								href: 'form/fail.html'
+							}
 
-  <script>
-    BUI.use('common/main',function(){
-      var config = [{
-          id:'product', 
-          //homePage : 'addProduct',
-          menu:[{
-              text:'样品操作',
-              items:[
-                {id:'addProduct',text:'新增样品',href:'product/addProduct.html'},
-                {id:'searchProduct',text:'查询样品',href:'product/searchProduct.html'}
-              ]
-            }]
-          },{
-            id:'order',
-            menu:[{
-                text:'生产订单',
-                items:[
-                  {id:'searchProduceOrder',text:'查询生产订单',href:'order/searchProduceOrder.html'}
-                ]
-              },{
-                text:'销售订单',
-                items:[
-                  {id:'addSalesOrder',text:'新增销售订单',href:'order/addSalesOrder.html'},
-                  {id:'searchSalesOrder',text:'查询销售订单',href:'order/searchSalesOrder.html'}
-                
-                ]
-              }]
-          },{
-            id:'quote',
-            menu:[{
-                text:'报价管理',
-                items:[
-                  {id:'code',text:'搜索页面代码',href:'search/code.html'},
-                  {id:'example',text:'搜索页面示例',href:'search/example.html'},
-                  {id:'example-dialog',text:'搜索页面编辑示例',href:'search/example-dialog.html'},
-                  {id:'introduce',text:'搜索页面简介',href:'search/introduce.html'}, 
-                  {id:'config',text:'搜索配置',href:'search/config.html'}
-                ]
-              }]
-          },{
-            id:'report',
-            menu:[{
-                text:'生产报表',
-                items:[
-                  {id:'code',text:'引入代码',href:'chart/code.html'},
-                  {id:'line',text:'折线图',href:'chart/line.html'},
-                  {id:'area',text:'区域图',href:'chart/area.html'},
-                  {id:'column',text:'柱状图',href:'chart/column.html'},
-                  {id:'pie',text:'饼图',href:'chart/pie.html'}, 
-                  {id:'radar',text:'雷达图',href:'chart/radar.html'}
-                ]
-              }]
-          },{
-            id : 'management',
-            menu : [{
-              text : '权限管理',
-              items:[
-                  {id:'code',text:'详情页面代码',href:'detail/code.html'},
-                  {id:'example',text:'详情页面示例',href:'detail/example.html'},
-                  {id:'introduce',text:'详情页面简介',href:'detail/introduce.html'}
-              ]
-            },{
-                text:'工序管理',
-                items:[
-                  {id:'success',text:'新增订单',href:'form/success.html'},
-                  {id:'fail',text:'查询订单',href:'form/fail.html'}
-                
-                ]
-              }]
-          }];
-      new PageUtil.MainPage({
-        modulesConfig : config
-      });
-    });
-  </script>
- </body>
+						]
+					}]
+				}];
+				new PageUtil.MainPage({
+					modulesConfig: config
+				});
+			});
+		</script>
+	</body>
 </html>
