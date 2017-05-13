@@ -4,10 +4,9 @@
 <head>
     <title>查询样品</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href="http://g.alicdn.com/bui/bui/1.1.21/css/bs3/dpl.css" rel="stylesheet">
-  	<link href="http://g.alicdn.com/bui/bui/1.1.21/css/bs3/bui.css" rel="stylesheet">
+    <link href="https://g.alicdn.com/bui/bui/1.1.21/css/bs3/dpl.css" rel="stylesheet">
+  	<link href="https://g.alicdn.com/bui/bui/1.1.21/css/bs3/bui.css" rel="stylesheet">
 </head>
-
 <body>
 	<br />
     <div class="container">
@@ -57,6 +56,7 @@
     <script type="text/javascript" src="../assets/js/bui-min.js"></script>
     <script type="text/javascript" src="../assets/js/config-min.js"></script>
     <script type="text/javascript">
+        BUI.use('common/page');
         BUI.use('common/search', function (Search) {
             var enumObj = { "1": "男", "0": "女" },
                 editing = new BUI.Grid.Plugins.DialogEditing({
@@ -71,7 +71,7 @@
                                 id: 'detail' + v,
                                 title: '样品详情',
                                 text: v,
-                                href: 'detail/product.html'
+                                href: 'detail/example.html'
                             });
                         }
                     },
@@ -93,7 +93,7 @@
                         }
                     }
                 ],
-                store = Search.createStore('../data/student.json', {
+                store = Search.createStore('../data/product.json', {
                     proxy: {
                         save: { //也可以是一个字符串，那么增删改，都会往那么路径提交数据，同时附加参数saveType
                             addUrl: '../data/add.json',
@@ -153,7 +153,5 @@
             });
         });
     </script>
-
     <body>
-
 </html>
